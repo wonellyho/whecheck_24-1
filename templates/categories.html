@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카테고리별 준비물</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-12">
+                <h3 class="text-center mb-4">카테고리별 준비물</h3>
+            </div>
+<!--            카테고리와 준비물을 먼저 선언해주고, 각 위젯에 넣어주기-->
+            {% for category, items in categories.items() %}
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-header bg-primary text-white">
+                            <h4 class="card-title">{{ category }}</h4>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-group">
+                                {% for item in items %}
+                                    <li class="list-group-item position-relative">
+                                        {{ item }}
+                                        <input type="checkbox" class="checkbox-input" id="{{ item }}" name="{{ item }}">
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="row justify-content-center mt-4">
+            <div class="col-md-4">
+<!--                돌아가기 버튼 수행시-->
+                <a href="/" class="btn btn-secondary btn-block">돌아가기</a>
+            </div>
+        </div>
+    </div>
+
+<!--    불꽃놀이 애니메이션 효과-->
+    <div class="fireworks" id="fireworks"></div>
+    <div class="message" id="message">외출 준비 끝!</div>
+    <script src="{{ url_for('static', filename='fireworks.js') }}"></script>
+</body>
+</html>
+
+

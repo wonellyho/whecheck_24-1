@@ -1,0 +1,158 @@
+/*일반카드위젯들 css모음*/
+
+.card {
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+    font-size: 2.7em; /* whe-check! 크기 */
+    font-weight: bold; /* 볼드체 */
+}
+
+.card-title2 {
+    font-size: 1.8em; /* 현재날씨정보 크기 */
+    font-weight: bold; /* 볼드체 */
+}
+
+.card-header {
+    border-radius: 15px 15px 0 0;
+}
+
+.form-control, .btn {
+    border-radius: 10px;
+}
+
+.btn {
+    font-size: 1.2em;
+}
+
+.list-group-item {
+    font-size: 1.2em;
+}
+
+/*불꽃놀이 css*/
+
+.fireworks {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+.firework {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background-size: contain;
+    opacity: 0;
+    animation: explode 3s ease-out forwards;
+}
+
+@keyframes explode {
+    0% {
+        transform: scale(0.5);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+/*글씨체css*/
+
+.message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3em;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    display: none;
+    z-index: 1001;
+}
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background-color: #f5f5f5;
+}
+
+
+/* 블럭 색상 css */
+
+.bg-primary {
+    background-color: #a6c0e4 !important; /* whe-check부분 */
+}
+
+.bg-secondary {
+    background-color: #ffffff !important; /* 변경된 색상 */
+}
+
+.bg-danger {
+    background-color: #FDE7E8 !important; /* 변경된 색상 */
+}
+
+.bg-info {
+    background-color: #a6c0e4 !important; /* 변경된 색상 */
+}
+
+.btn-primary {
+    background-color: #dfa7a7 !important; /* 추가버튼 */
+    border-color: #dfa7a7 !important;
+}
+
+.btn-secondary {
+    background-color: #66c2ea !important; /* 카테고리별 준비물 확인 */
+    border-color: #5dbadf !important;
+}
+
+.btn-danger {
+    background-color: rgb(223, 167, 167) !important; /* 변경된 색상 */
+    border-color: #dfa7a7 !important;
+}
+
+.btn-info {
+    background-color: #f1b6b6 !important; /* 날씨조회버튼 색상 */
+    border-color: #dfa7a7 !important;
+}
+
+
+/*마지막화면 & 준비물리스트*/
+
+.list-group-item {
+    font-size: 1.2em;
+}
+
+.checkbox-input {
+    position: absolute;
+    right: 0;
+    transform: scale(1.5); /* 체크박스 크기 확대 */
+    margin-right: 10px; /* 오른쪽 마진 추가 */
+    margin-left: 10px; /* 텍스트와의 간격 조절 */
+}
+
+.message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3em;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    display: none;
+    z-index: 1001;
+}
+.fixed-button {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+

@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>준비물 입력</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-sm-12">
+                <div class="card bg-primary">
+                    <div class="card-header text-white">
+                        <h3 class="card-title">whe-check!</h3>
+                    </div>
+                    <div class="card-body">
+                        <form id="addItemForm" action="/add" method="POST">
+                            <div class="form-group">
+                                <label for="category">카테고리 선택:</label>
+                                <select class="form-control" id="category" name="category">
+                                    {% for category in categories.keys() %}
+                                        <option value="{{ category }}">{{ category }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="item">준비물:</label>
+                                <input type="text" class="form-control" id="item" name="item" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">추가</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="mt-3">
+                    <a href="/categories" class="btn btn-secondary btn-block">카테고리별 준비물 확인</a>
+                </div>
+                <div class="mt-3">
+                    <form action="/reset" method="POST">
+                        <button type="submit" class="btn btn-danger btn-block">준비물 초기화</button>
+                    </form>
+                </div>
+
+                <div class="card mt-4 bg-info">
+                    <div class="card-header text-white">
+                        <h3 class="card-title2">현재 날씨 정보</h3>
+                    </div>
+                    <div class="card-body">
+                        <form action="/" method="GET" class="input-group mb-3">
+                            <input type="text" class="form-control" id="location" name="location" placeholder="예: OO구 00동" required>
+                            <div class="input-group-append">
+                                <button class="btn btn-info" type="submit">날씨 조회</button>
+                            </div>
+                        </form>
+                        <p><strong>위치:</strong> {{ address }}</p>
+                        <p><strong>현재 온도:</strong> {{ temperature }}</p>
+                        <p><strong>날씨 상태:</strong> {{ weather_status }}</p>
+                        <p><strong>미세먼지 및 자외선 상태</strong></p>
+                        <ul>
+                            {% for info in air_info %}
+                                <li>{{ info }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="https://lms.ssu.ac.kr/" class="btn btn-info fixed-button" target="_blank">LMS</a>
+</body>
+</html>
+
