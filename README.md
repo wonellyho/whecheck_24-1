@@ -12,7 +12,7 @@
 </p>
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/776b7832-04b8-40da-bc2d-163e591a78af" alt="Image" width="80%" />
+  <img src="https://github.com/user-attachments/assets/98e16bd6-cf24-4f69-985c-73a8987441f6" alt="Image" width="80%" />
 </p>
 
 * 위의 이미지는 **앱의 메인 UI 및 체크리스트 화면 예시**입니다.  
